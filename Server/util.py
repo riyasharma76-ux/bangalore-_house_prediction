@@ -1,6 +1,7 @@
 import json
 import pickle
 import numpy as np
+import os
 
 __locations = None
 __data_columns = None
@@ -31,10 +32,12 @@ def load_saved_artifacts():
     global __locations
     global __model      # <-- ADD THIS
 
-    with open('./artifacts/columns.json','r') as f:
-        __data_columns = json.load(f)['data_columns']
-        __locations = __data_columns[3:]
 
+
+BASE_DIR = os.path.dirname(__file__)
+
+with open(os.path.join(BASE_DIR, "artifacts", "columns.json"), "r") as f:
+    columns = json.load(f)
     with open('./artifacts/banglore_home_prices_model.pickle','rb') as f:
         __model = pickle.load(f)
 
