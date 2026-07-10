@@ -14,6 +14,10 @@ util.load_saved_artifacts()
 def home():
     return "Bangalore House Price Prediction API"
 
+@app.route("/test")
+def test():
+    return "Server is updated"
+
 @app.route('/get_location_names')
 def get_location_names():
     return jsonify({
