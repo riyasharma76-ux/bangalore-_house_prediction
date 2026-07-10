@@ -10,7 +10,7 @@ util.load_saved_artifacts()
 
 @app.route("/")
 def home():
-    return send_file("app.html")
+    return "Bangalore House Price Prediction API"
 
 @app.route('/get_location_names')
 def get_location_names():
