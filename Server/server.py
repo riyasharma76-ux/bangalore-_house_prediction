@@ -14,10 +14,6 @@ util.load_saved_artifacts()
 def home():
     return "Bangalore House Price Prediction API"
 
-@app.route("/test")
-def test():
-    return "Flask is running on Vercel"
-    
 @app.route('/get_location_names')
 def get_location_names():
     return jsonify({
@@ -38,4 +34,4 @@ def predict_home_price():
     })
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", port=5000)
