@@ -6,7 +6,9 @@ app = Flask(__name__)
 CORS(app)
 
 # Load the model when the app starts
+print("Starting application...")
 util.load_saved_artifacts()
+print("Location count:", len(util.get_location_names()))
 
 
 
